@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <stan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sbarrage <sbarrage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 20:31:52 by stan              #+#    #+#             */
-/*   Updated: 2022/07/11 14:39:29 by stan             ###   ########.fr       */
+/*   Updated: 2022/07/11 15:33:43 by sbarrage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ int	count_line(t_line *line)
 void find_pixels(t_pixels *pixels, t_line *line, int i, int	j)
 {
 	if (line->content[i])
+	{
+		pixels->xpixel = 600 - (100 * j);
+		find_pixels(pixels->right, line, i++, j);
+	}
+	if (line->next)
 	{
 		pixels->ypixel = 600 - (100 * j);
 		find_pixels(pixels, line, i++, j);
