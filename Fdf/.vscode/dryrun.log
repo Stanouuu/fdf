@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/stan/Work/C/Fdf'
+gcc -Wall -Wextra -Werror -Iminilibx-linux -O3 -c fdf.c -o fdf.o
+gcc fdf.o -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz -o fdf
+make: Leaving directory '/home/stan/Work/C/Fdf'
+ 
